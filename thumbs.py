@@ -203,7 +203,14 @@ def copy_selections(thumbnails_dir, user_selections_path, mapping_path):
             thumb, original = line.strip().split(None, 1)
             mappings[thumb] = original
     # Order by user's 1st selection, 2nd selection, ...
-    originals = [mappings[t] for t in allthumbs if selections[t]]
+    seen = set()
+    originals = []
+    for t in allthumbs:
+        if selections[t]:
+            if t in seen:
+                continue
+            seen.add(t)
+            originals.append(mappings[t])
     selections_dir = None
     for i in range(1000):
         p = os.path.join(thumbnails_dir, 'selections-' + str(i))
