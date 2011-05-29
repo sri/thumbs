@@ -174,7 +174,9 @@ def start_server(user_selections_path):
 
 # Size of the thumbnails directory.
 def report_thumbnails_dir_size(d):
-    size = commands.getoutput('du -hs ' + d).split()[0]
+    size = (commands.getoutput('du -hsc ' + d + '/*.jpg').
+                     splitlines()[-1].
+                     split()[0])
     print "size of thumbnails dir: " + size
     return size
 
