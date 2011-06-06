@@ -1,6 +1,6 @@
 I have about 2000 pictures (~4GB) under my ~/Pictures directory.
 From that, I want to select a subset and copy it to a new
-directory. This little script help me to do that quickly.
+directory. This little script helps me to do that quickly.
 
 You use a browser to select the images. After you are done, 
 those images will be copied to a directory.
