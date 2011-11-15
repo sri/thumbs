@@ -20,14 +20,16 @@ http://www.opensource.org/licenses/bsd-license.php
 How It Works
 =============
 
-1. Get all JPEGs under ~/Pictures.
-2. Create thumbnails for those JPEG under ./thumbs directory.
+1. Scan all JPEGs under ~/Pictures.
+2. Create thumbnails for those JPEGs under ./thumbs directory.
    Default thumbnail size: 320 x 320.
 3. A HTML page is generated with all the thumbnails.
 4. That HTML is opened by a browser. Since the browser
    opens the HTML straight from disk, it loads all
    the thumbnails very quickly.
 4. A webserver starts up in the background, recording
-   user selections.
+   user selections. Clicking on an image, selects it.
+   Clicking it again deselects it.
 5. When user is done, the selected images (the originals, 
-   not the thumbnails) are copied into a new directory.
+   not the thumbnails) are copied into a new directory
+   (in the order in which they were selected).
